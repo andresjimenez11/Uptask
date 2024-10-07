@@ -1,0 +1,104 @@
+@use 'base/variables' as v; 
+@use 'base/mixins' as m;
+
+.sidebar {
+    opacity: 0;
+    background-color: v.$morado;
+    height: 0;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-duration: 500ms;
+    
+    &.mostrar {
+        background-color: darken(v.$morado, 15%);
+        opacity: 1;
+        padding: 2rem 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        @include m.tablet {
+            display: none;
+            opacity: 0;
+        }
+    }
+
+    &.ocultar {
+        opacity: 0;
+    }
+    
+    @include m.tablet {
+        height: 100%;
+        opacity: 1;
+        background-color: v.$morado;
+    }
+
+    .contenedor-sidebar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            color: v.$blanco;
+            margin: 0;
+            text-align: center;
+        }
+
+        .cerrar-menu {
+            display: flex;
+            justify-content: center;
+            height: 2rem;
+            width: 2rem;
+            margin: 4rem;
+            img {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            @include m.tablet {
+                display: none;
+            }
+        }
+    }
+
+    h2 {
+        color: v.$blanco;
+        margin: 0;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .sidebar-nav {
+        margin-top: 5rem;
+
+        a {
+            color: v.$blanco;
+            display: block;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            transition-property: background-color;
+            transition-duration: 300ms;
+            font-size: 2.2rem;
+
+            &:hover,
+            &.activo {
+                background-color: darken(v.$morado , 20%);
+                border-radius: .5rem;
+            }
+        }
+    }
+
+    .cerrar-sesion-mobile {
+        margin-top: 8rem;
+
+        .cerrar-sesion {
+            @include m.boton(v.$morado, v.$blanco);
+        }
+        @include m.tablet {
+            display: none;
+        }
+    }
+}

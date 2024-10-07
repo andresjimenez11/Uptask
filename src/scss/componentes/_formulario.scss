@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario {
+    margin-top: 5rem;
+    .campo{
+        display: flex;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    label{
+        flex: 0 0 10rem; // Regula la medida del label en 10rem
+        cursor: pointer;
+    }
+
+    .campo input[type="email"],
+    .campo input[type="text"],
+    .campo input[type="password"],
+    .campo input[type="number"] {
+        flex: 1; // Permite que el input se extienda por todo el div
+        padding: 1rem;
+        border: none;
+        background-color: lighten(v.$gris, 40%)
+    }
+}

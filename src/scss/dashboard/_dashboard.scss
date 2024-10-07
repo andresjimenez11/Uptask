@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.dashboard {
+    background-color: v.$grisClaro;
+
+    @include m.tablet {
+        display: flex;
+        height: 100vh; // Viewport height - Altura de toda la pantalla
+    }
+
+    .principal {
+        flex: 1;
+        @include m.tablet {
+            overflow: scroll; // Permite hacer scroll en una sección sin dañarla, lo demás quedará dijo
+            overflow-x: hidden;
+        }
+    }
+
+    .contenido {
+        padding: 4rem 2rem 2rem 2rem;
+        .nombre-pagina {
+            font-size: 3.2rem;
+            text-align: center;
+        }
+    }
+
+    .formulario {
+        input:not([type="submit"]){
+            background-color: v.$blanco;
+        }
+        input[type="submit"] {
+            @include m.boton(v.$morado, v.$blanco);
+            padding: 1.3rem;
+        }
+    }
+
+    .enlace {
+        color: v.$morado;
+
+        &:hover {
+            color: darken(v.$morado, 20%);
+        }
+    }
+}

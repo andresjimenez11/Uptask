@@ -1,0 +1,21 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.error404 {
+    margin-top: 3rem;
+
+    @include m.tablet {
+        margin-top: 6rem;
+    }
+    .uptask{
+        @include m.textoDegradado(v.$gris);
+    }
+    .acciones {
+        justify-content: center;
+   
+        a {
+            @include m.boton(v.$gris, v.$blanco);
+            margin-top: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.confirmar{
+    margin-top: 3rem;
+    
+    .descripcion-pagina {
+
+        color: lighten(v.$verde, 5%);
+        background: lighten(v.$verde, 65%); 
+        text-align: center;
+        border-radius: .5rem;
+        border: lighten(v.$verde, 5%)  1px solid;
+        width: 88%;
+        margin: 0 auto;
+    }
+
+    @include m.tablet {
+        margin-top: 6rem;
+    }
+    .uptask{
+        @include m.textoDegradado(v.$indigo);
+    }
+    .acciones {
+        justify-content: center;
+   
+        a {
+            @include m.boton(v.$indigo, v.$blanco);
+            margin-top: 0.5rem;
+        }
+    }
+}

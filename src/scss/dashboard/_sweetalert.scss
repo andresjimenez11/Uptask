@@ -1,0 +1,10 @@
+@use 'base/variables' as v;
+
+.swal2-popup { // TODO: Reescalar alertas de sweetalert2
+    font-size: 1.3rem !important;
+    font-family: Georgia, serif;
+
+    .swal2-confirm.swal2-styled {
+        background-color: v.$morado;
+    }
+}

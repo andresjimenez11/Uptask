@@ -1,0 +1,21 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.crear{
+    margin-top: 3rem;
+    @include m.tablet {
+        margin-top: 6rem;
+    }
+    .uptask{
+        @include m.textoDegradado(v.$cyan);
+    }
+    .acciones {
+        a {
+            color: v.$cyan;
+        }
+    }
+    input[type="submit"] {
+        @include m.boton(v.$cyan, v.$blanco);
+        margin-top: 4rem;
+    }
+}

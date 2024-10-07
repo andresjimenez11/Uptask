@@ -1,0 +1,103 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+@media (prefers-color-scheme : dark) {
+    $grisOscuro: #2c2c3b;
+    body {
+        background-color: $grisOscuro;
+    }
+    .tagline,
+    .formulario label,
+    .login .acciones a,
+    .crear .acciones a,
+    .olvide .acciones a,
+    .nombre-pagina,
+    .barra p,
+    .no-tareas {
+        color: v.$blanco;
+    }
+
+    .descripcion-pagina,
+    .formulario .campo input {
+        color: darken(v.$grisClaro, 5%);
+    }
+
+    .formulario .campo input {
+        background-color: lighten( $grisOscuro, 5%) !important;
+    }
+
+    ::placeholder{
+        color: darken(v.$grisClaro, 40%);
+    }
+    .barra-mobile,
+    .barra,
+    .sidebar {
+        background-color: darken($grisOscuro, 8%);
+    }
+    
+    .sidebar {
+        &.mostrar {
+            background-color: darken($grisOscuro, 8%);
+        }
+    }
+
+    .filtros {
+        background-color: lighten($grisOscuro, 10%);
+        h2,
+        label {
+            color: v.$blanco;
+        }
+        input[type="radio"] {
+            accent-color: v.$naranja;
+        }
+
+    }
+
+    .dashboard {
+        background-color: $grisOscuro;
+
+        .enlace {
+            color: v.$grisClaro;
+            
+            &:hover {
+                color: darken(v.$grisClaro, 20%);
+            }
+        }
+    }
+
+    .listado-proyectos .proyecto {
+        background-color: lighten($grisOscuro, 20%);
+        
+        &:hover {
+            background-color: lighten($grisOscuro, 10%);
+        }
+    }
+
+    .listado-tareas .tarea {
+        background-color: lighten($grisOscuro, 10%);
+        border: none;
+        border-radius: 1rem;
+
+        p {
+            color: v.$grisClaro;
+        }
+    }
+
+    .modal .formulario {
+        background-color: $grisOscuro;
+        input[type="text"] {
+            background-color: lighten($grisOscuro, 20%);
+            border: none;
+        }
+        
+        legend {
+            color: v.$grisClaro;
+        }
+    }
+
+    .estado-tarea {
+        &.pendiente {
+            background-color: darken(v.$naranja, 5%) !important;
+        }
+    }
+}
